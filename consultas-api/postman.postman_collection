@@ -1,0 +1,405 @@
+{
+  "info": {
+    "_postman_id": "24fa7af9-b7fc-4474-984f-8254173cec19",
+    "name": "Spring - consultas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50176156",
+    "_collection_link": "https://go.postman.co/collection/50176156-24fa7af9-b7fc-4474-984f-8254173cec19?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "pacientes - list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/pacientes?size=10&page=0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "pacientes"
+          ],
+          "query": [
+            {
+              "key": "size",
+              "value": "10"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pacientes - one",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/pacientes/fc258b10-c685-415f-8e60-93d8a797b4e3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "pacientes",
+            "fc258b10-c685-415f-8e60-93d8a797b4e3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pacientes - create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cpf\": \"124567890\",\r\n    \"nome\": \"Adamear de campos\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/V1/pacientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "pacientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pacientes - update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cpf\": \"12345789456\",\r\n    \"nome\": \"José Campos updated\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/V1/pacientes/fc258b10-c685-415f-8e60-93d8a797b4e3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "pacientes",
+            "fc258b10-c685-415f-8e60-93d8a797b4e3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pacientes - delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/pacientes/fc258b10-c685-415f-8e60-93d8a797b4e3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "pacientes",
+            "fc258b10-c685-415f-8e60-93d8a797b4e3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "medicos - list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/medicos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "medicos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "medicos - one",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/medicos/fc258b10-c685-415f-8e60-93d8a797b4e3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "medicos",
+            "fc258b10-c685-415f-8e60-93d8a797b4e3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "medicos- create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"crm\": \"654321\",\r\n    \"nome\": \"Dr. Jessica\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/V1/medicos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "medicos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "medicos - update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"crm\": \"123456\",\r\n    \"nome\": \"Dr. José Campos\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/V1/medicos/63e3dafd-4896-49ff-8acc-dff54b38a3ec",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "medicos",
+            "63e3dafd-4896-49ff-8acc-dff54b38a3ec"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "medicos - delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/medicos/2e98cc2e-1a09-4d09-a3b3-e33e67e76720",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "medicos",
+            "2e98cc2e-1a09-4d09-a3b3-e33e67e76720"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consultas - list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/consultas?size=100",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "consultas"
+          ],
+          "query": [
+            {
+              "key": "size",
+              "value": "100"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consultas - one",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/consultas/56c8dd83-ae46-46e3-892d-0175e8825264",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "consultas",
+            "56c8dd83-ae46-46e3-892d-0175e8825264"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consultas- create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"idMedico\": \"d3172451-5285-457f-a239-207bd45587f8\",\r\n    \"idPaciente\": \"05559da1-d5e7-4e82-8c3c-086e0808a6d2\",\r\n    \"dataConsulta\": \"2026-02-20T13:41:15.324Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/V1/consultas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "consultas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consultas - update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"idMedico\": \"63e3dafd-4896-49ff-8acc-dff54b38a3ec\",\r\n    \"idPaciente\": \"b60ecf78-5ac9-4d56-8a6f-5a2f52269276\",\r\n    \"dataConsulta\": \"2026-02-20T13:41:15.324Z\",\r\n    \"observacao\": \"Consulta de rotina\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/V1/consultas/56c8dd83-ae46-46e3-892d-0175e8825264",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "consultas",
+            "56c8dd83-ae46-46e3-892d-0175e8825264"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "consultas - delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/V1/consultas/07935f39-484c-4017-b659-b617086a573b",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "V1",
+            "consultas",
+            "07935f39-484c-4017-b659-b617086a573b"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

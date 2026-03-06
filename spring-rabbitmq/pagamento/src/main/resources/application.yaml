@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: pagamento
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/loja_spring_boot
+    username: postgres
+    password: admin123456
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    jpa:
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+
+  flyway:
+    enabled=false:
+
+  web:
+    error:
+      include-stacktrace: never
+
+server:
+  port: 8081
+  error:
+    include-stacktrace: never
+

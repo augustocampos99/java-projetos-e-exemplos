@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/clinica_spring_boot_test
+    username: postgres
+    password: admin123456
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    jpa:
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+
