@@ -28,5 +28,19 @@ services:
     ports:
       - "8080:8080"
 
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    restart: unless-stopped
+    depends_on:
+      - app
+
 volumes:
   postgres_data:
+
+# Configuro o postgresql já criando o banco empresa_web
+# Subo o app spring-boot usando o Docker file como base (context: .)
+# Subo o nginx copiando o nginx/nginx.conf
