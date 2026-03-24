@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: empresa-api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/empresa_web
+    username: postgres
+    password: admin123456
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    jpa:
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+
+  flyway:
+    enabled=true:
+    url:  jdbc:postgresql://localhost:5432/empresa_web
+    user: postgres
+    password: admin123456
+
+  server:
+    port: 8080
+    error:
+      include-stacktrace: never
+
+  cache:
+    type: redis  
+
+  redis:
+    host: redis
+    port: 6379    
+
+  web:
+    error:
+      include-stacktrace: never
+
+# docker-compose up --build -> force rebuild
+# docker-compose up -d
+# docker-compose down

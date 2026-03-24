@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: empresa-api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/empresa_web
+    username: postgres
+    password: admin123456
+    driver-class-name: org.postgresql.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    jpa:
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+    hikari:
+      minimum-idle: 20
+      maximum-pool-size: 50
+      connectionTimeout: 10000
+      idleTimeout: 600000
+      maxLifetime: 1800000
+
+  flyway:
+    enabled=true:
+    url:  jdbc:postgresql://localhost:5432/empresa_web
+    user: postgres
+    password: admin123456
+
+  server:
+    port: 8080
+    error:
+      include-stacktrace: never
+
+
+  web:
+    error:
+      include-stacktrace: never
+
+# Através do hikari eu configuro um pool de conexões abertas para deixa o banco mais resiliente (minimo 20 e maximo 50)

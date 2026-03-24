@@ -1,0 +1,62 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: empresa_web
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123456
+      POSTGRES_DB: empresa_web
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+    env_file: ./env/app.env
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+
+  redis:
+    image: redis:7.2.4
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+
+  redis-insight:
+    image: redis/redisinsight:latest
+    restart: always
+    ports:
+      - "5540:5540"
+    volumes:
+      - redis-insight-data:/data
+    # Optional: connect RedisInsight to the redis-server service automatically
+    environment:
+      # Use the service name "redis-server" as the host
+      REDISINSIGHT_HOST: redis-server
+      REDISINSIGHT_PORT: 6379
+
+volumes:
+  postgres_data:
+  redis-data:
+    driver: local
+  redis-insight-data:
+    driver: local
+
+# Configuro o postgresql já criando o banco empresa_web
+# Subo o app spring-boot usando o Docker file como base (context: .)
+# Subo o nginx copiando o nginx/nginx.conf

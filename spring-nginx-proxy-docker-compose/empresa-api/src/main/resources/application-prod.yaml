@@ -14,6 +14,12 @@ spring:
       properties:
         hibernate:
           format_sql: false
+    hikari:
+      minimum-idle: 20
+      maximum-pool-size: 50
+      connectionTimeout: 10000
+      idleTimeout: 600000
+      maxLifetime: 1800000
 
   flyway:
     enabled=true:
@@ -31,3 +37,5 @@ spring:
     error:
       include-stacktrace: never
 
+
+# Através do hikari eu configuro um pool de conexões abertas para deixa o banco mais resiliente (minimo 20 e maximo 50)
