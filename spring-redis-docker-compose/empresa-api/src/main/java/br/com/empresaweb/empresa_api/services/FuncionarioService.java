@@ -23,11 +23,12 @@ public class FuncionarioService {
     }
 
     // Anotação para guardar uma list no cache com o identificador funcionarioList
-    @Cacheable(value = "funcionariosList")
+    @Cacheable(value = "funcionarios_list_cache")
     public Page<Funcionario> findAll(Pageable pageable) {
         return this.funcionarioRepository.findAll(pageable);
     }
 
+    @Cacheable(value = "funcionario_cache", key = "#id")
     public Funcionario findById(UUID id) throws NotFoundException {
         var funcionarioResult = this.funcionarioRepository.findById(id);
 

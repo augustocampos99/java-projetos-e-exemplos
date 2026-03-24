@@ -29,9 +29,10 @@ spring:
   cache:
     type: redis  
 
-  redis:
-    host: redis
-    port: 6379    
+  data:
+    redis:
+      host: redis
+      port: 6379    
 
   web:
     error:

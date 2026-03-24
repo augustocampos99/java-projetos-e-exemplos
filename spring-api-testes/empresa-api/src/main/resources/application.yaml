@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: empresa-api
+
+  server:
+    port: 8080
+    error:
+      include-stacktrace: never
+
+
+  web:
+    error:
+      include-stacktrace: never
+

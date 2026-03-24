@@ -1,0 +1,27 @@
+services:
+  app-1:
+    build:
+      context: .
+    env_file: ./env/app.env
+    restart: unless-stopped
+
+  app-2:
+    build:
+      context: .
+    env_file: ./env/app.env
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    restart: unless-stopped
+    depends_on:
+      - app-1
+      - app-2
+
+
+# Subo o app-1 e app-2 (spring-boot) usando o Docker file como base (context: .)
+# Subo o nginx copiando o nginx/nginx.conf
